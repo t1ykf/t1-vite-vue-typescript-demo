@@ -78,20 +78,32 @@ const ReadAll = () => {
                 @click="CreateOne"
                 >添加一条数据</el-button
             >
-            <el-button type="danger" size="small" icon="Plus" @click="DeleteOne"
+            <el-button
+                type="danger"
+                size="small"
+                icon="Delete"
+                @click="DeleteOne"
                 >删除一条数据</el-button
             >
             <el-button
                 type="warning"
                 size="small"
-                icon="Plus"
+                icon="Edit"
                 @click="UpdateOne"
                 >修改一条数据</el-button
             >
-            <el-button type="success" size="small" icon="Plus" @click="ReadOne"
+            <el-button
+                type="success"
+                size="small"
+                icon="Search"
+                @click="ReadOne"
                 >查询一条数据</el-button
             >
-            <el-button type="success" size="small" icon="Plus" @click="ReadAll"
+            <el-button
+                type="success"
+                size="small"
+                icon="Search"
+                @click="ReadAll"
                 >查询全部数据</el-button
             >
         </el-button-group>
