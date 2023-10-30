@@ -5,6 +5,25 @@ T1 后端云 Vite4+Vue3+TypeScript 例子
 
 # 前期准备
 
+## 克隆代码
+
+```shell
+git clone git@github.com:t1ykf/t1-vite-vue-typescript-demo.git
+```
+
+## 安装依赖
+
+```shell
+cd t1-vite-vue-typescript-demo
+npm install
+```
+
+## 运行
+
+```shell
+npm run dev
+```
+
 ## 环境变量配置
 
 打开项目中的`.env.dev`和`.env.prod`，修改其中的 APPID 以及 API Key，Secret Key，生产环境请一定将域名替换为自己的域名！
