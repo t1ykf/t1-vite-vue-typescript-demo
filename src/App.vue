@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { DataService } from './api/api.ts'
+import { T1YClient } from './api/t1y.ts'
 import { ElMessage } from 'element-plus'
 
 // 表名
@@ -23,7 +23,7 @@ const textarea: Student = {
 
 // 创建一条数据
 const CreateOne = () => {
-    DataService.CreateOne(table, textarea).then((res: any) => {
+    T1YClient.createOne(table, textarea).then((res: any) => {
         // 创建成功
         objectID.value = res.data.objectId
         ElMessage.success(res.message)
@@ -32,7 +32,7 @@ const CreateOne = () => {
 
 // 删除一条数据
 const DeleteOne = () => {
-    DataService.DeleteOne(table, objectID.value).then((res: any) => {
+    T1YClient.deleteOne(table, objectID.value).then((res: any) => {
         // 删除成功
         ElMessage.success(res.message)
     })
@@ -40,7 +40,7 @@ const DeleteOne = () => {
 
 // 修改一条数据
 const UpdateOne = () => {
-    DataService.UpdateOne(table, objectID.value, { $set: { age: 22 } }).then(
+    T1YClient.updateOne(table, objectID.value, { $set: { age: 22 } }).then(
         (res: any) => {
             // 修改成功
             ElMessage.success(res.message)
@@ -51,7 +51,7 @@ const UpdateOne = () => {
 const result = ref()
 // 查询一条数据
 const ReadOne = () => {
-    DataService.ReadOne(table, objectID.value).then((res: any) => {
+    T1YClient.readOne(table, objectID.value).then((res: any) => {
         // 查询成功
         result.value = res.data.data
         ElMessage.success(res.message)
@@ -60,7 +60,7 @@ const ReadOne = () => {
 
 // 查询全部数据（分页查询）
 const ReadAll = () => {
-    DataService.ReadAll(table, 1, 10).then((res: any) => {
+    T1YClient.readAll(table, 1, 10).then((res: any) => {
         // 查询成功
         result.value = res.data.data
         ElMessage.success(res.message)
