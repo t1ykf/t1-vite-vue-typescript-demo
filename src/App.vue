@@ -50,8 +50,8 @@ const UpdateOne = () => {
 
 const result = ref()
 // 查询一条数据
-const ReadOne = () => {
-    T1YClient.readOne(table, objectID.value).then((res: any) => {
+const FindOne = () => {
+    T1YClient.findOne(table, objectID.value).then((res: any) => {
         // 查询成功
         result.value = res.data.data
         ElMessage.success(res.message)
@@ -59,8 +59,8 @@ const ReadOne = () => {
 }
 
 // 查询全部数据（分页查询）
-const ReadAll = () => {
-    T1YClient.readAll(table, 1, 10).then((res: any) => {
+const FindAll = () => {
+    T1YClient.findAll(table, 1, 10).then((res: any) => {
         // 查询成功
         result.value = res.data.data
         ElMessage.success(res.message)
@@ -96,14 +96,14 @@ const ReadAll = () => {
                 type="success"
                 size="small"
                 icon="Search"
-                @click="ReadOne"
+                @click="FindOne"
                 >查询一条数据</el-button
             >
             <el-button
                 type="success"
                 size="small"
                 icon="Search"
-                @click="ReadAll"
+                @click="FindAll"
                 >查询全部数据</el-button
             >
         </el-button-group>

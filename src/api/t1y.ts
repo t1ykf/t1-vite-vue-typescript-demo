@@ -14,11 +14,11 @@ export class T1YClient {
         return request(`/v5/classes/${collection}/${id}`, params, 'put')
     }
     // 查询一条数据
-    static async readOne(collection: string, id: string) {
+    static async findOne(collection: string, id: string) {
         return request(`/v5/classes/${collection}/${id}`, {}, 'get')
     }
     // 查询全部数据（分页查询）
-    static async readAll(collection: string, page: number, size: number) {
+    static async findAll(collection: string, page: number, size: number) {
         return request(
             `/v5/classes/${collection}?page=${page}&size=${size}`,
             {},
